@@ -1,4 +1,4 @@
-import type { GridConfig } from "@abhimanew2000/react-kendo-datagrid";
+import type { GridConfig } from "@helmapps/react-kendo-datagrid";
 
 const isLocal = window.location.hostname === "localhost";
 
@@ -70,4 +70,12 @@ export async function loadGridConfig(filename: string): Promise<GridConfig> {
     }
   }
   return config;
+}
+
+export async function loadFilterConfig(filename: string): Promise<any> {
+  const res = await fetch(`${API_BASE_GRID}/Config/filename/${filename}/configType/Filter`);
+  if (!res.ok) {
+    throw new Error("Failed to load filter configuration");
+  }
+  return await res.json();
 }

@@ -3,7 +3,7 @@ import { createRoot } from "react-dom/client";
 import "./index.css";
 import App from "./App";
 
-import "@abhimanew2000/react-kendo-datagrid/dist/react-kendo-datagrid.css";
+import "@helmapps/react-kendo-datagrid/dist/react-kendo-datagrid.css";
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
